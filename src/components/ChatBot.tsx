@@ -222,7 +222,7 @@ export default function ChatBot() {
                 onKeyDown={handleKeyPress}
                 placeholder="Type your message..."
                 disabled={isLoading}
-                className="w-full px-5 py-3.5 bg-gray-100 border-0 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white disabled:bg-gray-100 text-sm transition-all duration-200 pr-12"
+                className="w-full px-5 py-3.5 bg-gray-100 border-0 rounded-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white disabled:bg-gray-100 text-sm transition-all duration-200 pr-12 text-gray-900 placeholder-gray-500"
               />
               <button
                 onClick={() => sendMessage()}
