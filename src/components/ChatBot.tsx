@@ -108,8 +108,25 @@ export default function ChatBot() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <div className="flex flex-col w-full max-w-lg h-[700px] bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200">
+    <div className="relative flex items-center justify-center min-h-screen p-4 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
+      {/* Background Text */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+        <div className="text-center">
+          <p className="text-6xl md:text-8xl font-bold text-white/5 tracking-tight">
+            YOUR WEBSITE
+          </p>
+          <p className="text-4xl md:text-6xl font-bold text-white/5 tracking-tight mt-2">
+            WILL BE HERE
+          </p>
+          <div className="mt-8 flex items-center justify-center gap-3">
+            <div className="w-16 h-[2px] bg-white/10 rounded-full"></div>
+            <span className="text-white/20 text-sm font-medium tracking-widest uppercase">Embed Anywhere</span>
+            <div className="w-16 h-[2px] bg-white/10 rounded-full"></div>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative z-10 flex flex-col w-full max-w-lg h-[700px] bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200">
         
         {/* Header */}
         <div className="relative bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 text-white p-5">
