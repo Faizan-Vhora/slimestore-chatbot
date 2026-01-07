@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import SlimeLogo from './SlimeLogo';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -98,9 +99,9 @@ export default function ChatBot() {
     return (
       <button
         onClick={() => setIsMinimized(false)}
-        className="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-all duration-300 group z-50"
+        className="fixed bottom-6 right-6 w-16 h-16 bg-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-all duration-300 group z-50 border-2 border-purple-200"
       >
-        <span className="text-2xl group-hover:scale-110 transition-transform">🧪</span>
+        <SlimeLogo size={40} />
         <span className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white animate-pulse"></span>
       </button>
     );
@@ -115,8 +116,8 @@ export default function ChatBot() {
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSI0Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-30"></div>
           <div className="relative flex items-center gap-4">
             <div className="relative">
-              <div className="w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                <span className="text-3xl">🧪</span>
+              <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center shadow-lg">
+                <SlimeLogo size={42} />
               </div>
               <span className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white"></span>
             </div>
@@ -147,8 +148,8 @@ export default function ChatBot() {
             >
               <div className={`flex gap-3 max-w-[85%] ${message.role === 'user' ? 'flex-row-reverse' : ''}`}>
                 {message.role === 'assistant' && (
-                  <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center shadow-md">
-                    <span className="text-lg">🧪</span>
+                  <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-white border border-gray-100 flex items-center justify-center shadow-sm">
+                    <SlimeLogo size={28} />
                   </div>
                 )}
                 <div className="flex flex-col gap-1">
@@ -173,8 +174,8 @@ export default function ChatBot() {
           {isLoading && (
             <div className="flex justify-start animate-fadeIn">
               <div className="flex gap-3 max-w-[85%]">
-                <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center shadow-md">
-                  <span className="text-lg">🧪</span>
+                <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-white border border-gray-100 flex items-center justify-center shadow-sm">
+                  <SlimeLogo size={28} />
                 </div>
                 <div className="bg-white rounded-2xl rounded-bl-md px-5 py-4 shadow-sm border border-gray-100">
                   <div className="flex gap-1.5">
