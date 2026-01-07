@@ -97,13 +97,32 @@ export default function ChatBot() {
 
   if (isMinimized) {
     return (
-      <button
-        onClick={() => setIsMinimized(false)}
-        className="fixed bottom-6 right-6 w-16 h-16 bg-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-all duration-300 group z-50 border-2 border-purple-200"
-      >
-        <SlimeLogo size={40} />
-        <span className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white animate-pulse"></span>
-      </button>
+      <div className="fixed inset-0 pointer-events-none">
+        {/* Background Text for minimized state */}
+        <div className="absolute inset-0 flex items-center justify-center select-none">
+          <div className="text-center">
+            <p className="text-6xl md:text-8xl font-bold text-white/5 tracking-tight">
+              YOUR WEBSITE
+            </p>
+            <p className="text-4xl md:text-6xl font-bold text-white/5 tracking-tight mt-2">
+              WILL BE HERE
+            </p>
+            <div className="mt-8 flex items-center justify-center gap-3">
+              <div className="w-16 h-[2px] bg-white/10 rounded-full"></div>
+              <span className="text-white/20 text-sm font-medium tracking-widest uppercase">Embed Anywhere</span>
+              <div className="w-16 h-[2px] bg-white/10 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+        
+        <button
+          onClick={() => setIsMinimized(false)}
+          className="pointer-events-auto fixed bottom-6 right-6 w-16 h-16 bg-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-all duration-300 group z-50 border-2 border-purple-200"
+        >
+          <SlimeLogo size={40} />
+          <span className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white animate-pulse"></span>
+        </button>
+      </div>
     );
   }
 
